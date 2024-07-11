@@ -59,6 +59,20 @@
         <button class="action-btn" onclick="giveActionResult('wordcount')">Word Count</button>
     </div>
     <script>
-       
+        function giveActionResult(action)
+        { 
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result-text")
+            const inputVal =inputElement.value
+           
+            if (action == 'uppercase') 
+                resultElement.innerText = inputVal.toUpperCase()
+            else if (action == 'lowercase')
+                resultElement.innerText = inputVal.toLowerCase()
+            else if (action == 'charcount')
+                resultElement.innerText = `Total Characters: ${inputVal.length}`
+            else
+                resultElement.innerText = `Total Words: ${inputVal.split(" ").length}`
+        }
     </script>
 </body>
